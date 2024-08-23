@@ -1,0 +1,129 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#game {
+    position: relative;
+    width: 600px;
+    height: 150px;
+    border: 2px solid #333;
+    background-color: #fff;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#dino {
+    position: absolute;
+    bottom: 0;
+    left: 50px;
+    width: 50px;
+    height: 50px;
+    background: url('images/dino.png') no-repeat center center/contain;
+}
+
+#cactus {
+    position: absolute;
+    bottom: 0;
+    right: -50px;
+    width: 30px;
+    height: 50px;
+    background: url('images/cactus.png') no-repeat center center/contain;
+    animation: moveCactus 2s linear infinite;
+}
+
+#coin {
+    position: absolute;
+    bottom: 30px;
+    right: -50px;
+    width: 30px;
+    height: 30px;
+    background: url('images/coin.png') no-repeat center center/contain;
+    animation: moveCoin 4s linear infinite;
+}
+
+#scoreboard {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 18px;
+}
+
+#total-stats {
+    margin-top: 5px;
+    font-size: 16px;
+}
+
+#button-container {
+    display: flex;
+    gap: 10px; /* فاصله بین دکمه‌ها */
+    margin-top: 10px;
+}
+
+#jumpButton, #conversionButton, #upgradeButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+#jumpButton {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#conversionButton {
+    background-color: #2196F3;
+    color: white;
+}
+
+#upgradeButton {
+    background-color: #FF5722;
+    color: white;
+}
+
+#jumpButton:hover {
+    background-color: #45a049;
+}
+
+#conversionButton:hover {
+    background-color: #1976D2;
+}
+
+#upgradeButton:hover {
+    background-color: #E64A19;
+}
+
+@keyframes moveCactus {
+    0% {
+        right: -50px;
+    }
+    100% {
+        right: 650px; /* افزایش فاصله برای حرکت کامل */
+    }
+}
+
+@keyframes moveCoin {
+    0% {
+        right: -50px;
+    }
+    100% {
+        right: 650px; /* افزایش فاصله برای حرکت کامل */
+    }
+}
